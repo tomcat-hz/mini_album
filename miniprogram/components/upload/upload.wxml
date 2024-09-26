@@ -1,0 +1,17 @@
+<!--components/upload/upload.wxml-->
+<view class="upload-box">
+  <view class="upload-num">上传图片({{originFiles.length}}/{{max}})</view>
+  <t-upload
+    draggable
+    max="{{max}}"
+    disabled="{{uploadStatus === 'uploading'}}"
+    size-limit="{{sizeLimit}}"
+    media-type="{{mediaType}}"
+    files="{{originFiles}}"
+    gridConfig="{{gridConfig}}"
+    bind:success="handleSuccess"
+    bind:remove="handleRemove"
+    bind:tap="handleClick"
+    bind:drop="handleDrop"
+  />
+</view>

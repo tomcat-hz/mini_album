@@ -1,0 +1,3 @@
+<!--pages/reback/reback.wxml-->
+<custom-navbar sticky showBack title="图片回收站"/>
+<text>pages/reback/reback.wxml</text>

@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<scroll-container
+  hasTabbar
+  isEmpty="{{total === 0}}"
+  bind:scroll="handleScroll" 
+  loading="{{pageLoading}}"
+  bind:refresh="initData">
+  <custom-navbar slot="header" showEdit sticky />
+  <empty-box url="camera.png" wx:if="{{total === 0}}" slot="empty" message="点击加号，上传您的照片" bind:tapAdd="uploadImage"/>
+  <view wx:else slot="content">
+    <waterfall-image style="margin-top: 60rpx;" images="{{images}}" bind:fileActionChange="fileActionChange"/>
+    <bottom-loading isLoading="{{isLoading}}" hasMore="{{total > imageNum}}" bind:loadMore="loadMore"/>
+    <!-- <virtual-scroll style="margin-top: 60rpx;" position="{{position}}"></virtual-scroll> -->
+  </view>
+</scroll-container>
+
+<view hidden="{{isEditFile}}">
+  <upload-button hideUploadBtn="{{hideUploadBtn}}" bind:tapUpload="uploadImage"/>
+</view>

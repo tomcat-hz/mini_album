@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "story-content": "/components/story-content/story-content",
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "bottom-loading": "/components/bottom-loading/bottom-loading",
+    "comment-list": "/components/comment-list/comment-list",
+    "empty-box": "/components/empty-box/empty-box"
+  }
+}

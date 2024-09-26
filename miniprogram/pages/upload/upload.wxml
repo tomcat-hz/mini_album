@@ -1,0 +1,44 @@
+<!--pages/upload/upload.wxml-->
+<custom-navbar sticky title="{{uploadTitle[action]}}" showBack/>
+
+<view class="base-form" style="height: calc(100vh - {{toolTop}}rpx - 78rpx);">
+  <block wx:if="{{ action === UploadActionType.createAlbum }}">
+    <view class="base-form-item">
+      <view class="base-form-label">相册名称</view>
+      <t-input 
+        bind:change="changeInput" 
+        data-field="albumName" 
+        value="{{albumName}}" 
+        style="{{inputStyle}}" 
+        placeholder="请输入相册名称" 
+        maxlength="{{10}}"/>
+    </view>
+  </block>
+  
+  <block wx:if="{{ action === UploadActionType.createStory }}">
+    <view class="base-form-item">
+      <view class="base-form-label">动态内容</view>
+      <t-textarea
+        bind:change="changeInput"
+        data-field="content"
+        value="{{content}}"
+        style="{{inputStyle}}"
+        placeholder="请输入动态内容"
+        disableDefaultPadding="{{true}}"
+        autosize="{{autosize}}"
+        maxlength="1000"
+        bind:line-change="onLineChange"
+        indicator
+      />
+    </view>
+  </block>
+
+  <view class="base-form-item">
+    <upload max="{{maxUpload.uploadImage}}" uploadStatus="{{uploadStatus}}" bind:uploadSuccess="uploadSuccess" bind:changeUploading="changeUploading" action="{{action}}"/>
+    <tip message="请不要上传敏感内容"/>
+  </view>
+
+  <view class="submit-btn">
+    <t-button loading="{{uploadStatus === 'uploading'}}" bind:tap="onSubmit">{{ uploadStatus === 'finshed' ? '继续提交' : '提交'}}</t-button>
+  </view>
+</view>

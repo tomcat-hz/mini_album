@@ -1,0 +1,4 @@
+<!--components/share/share.wxml-->
+<button open-type="share" class="no-effect-button">
+  <slot/>
+</button>

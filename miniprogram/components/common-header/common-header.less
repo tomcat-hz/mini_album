@@ -1,0 +1,20 @@
+/* components/common-header/common-header.wxss */
+.common-header {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+  &-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .nickname {
+      font-size: var(--font-size-middle);
+      color: var(--color-base);
+      font-weight: var(--font-weight-bold);
+    }
+    .time-ago {
+      font-size: var(--font-size-min);
+      color: var(--color-2);
+    }
+  }
+}

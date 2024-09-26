@@ -1,0 +1,44 @@
+<!--pages/my/my.wxml-->
+<view style="height: calc(100vh - {{tabbarHeight}}rpx);overflow: scroll;">
+  <custom-navbar showUserInfo />
+
+  <view class="vip-box">
+    <image class="vip-card" src="../../static/my/vip.png" mode=""/>
+    <view class="vip-text">
+      <view class="vip-info">
+        <text class="vip-info-title">开通VIP</text>
+        <text class="vip-info-text">开通vip获得更多空间</text>
+      </view>
+      <t-button style="background-color: #302C29;color: #FFFFFF;width: 170rpx;height: 60rpx;border-radius: 30rpx;margin: 0;font-size: 24rpx;border: none;" theme="light" size="medium" shape="round" bind:tap="clickVip">会员中心</t-button>
+    </view>
+  </view>
+
+  <view class="card-box">
+    <view class="card-item" wx:for="{{cardList}}" wx:key="item">
+      <view class="card-info">
+        <text class="card-title">{{item.title}}</text>
+        <text class="card-data">{{item.used}}{{item.usedUnit}} / {{item.total}}{{item.unit}}</text>
+      </view>
+      <t-progress color="{{item.color}}" label="{{false}}" percentage="{{item.percentage}}" />
+    </view>
+  </view>
+
+  <view class="set-box">
+    <view class="set-item" wx:for="{{setList}}" wx:key="item" bind:tap="clickSetList" data-page="{{item.pagePath}}">
+      <view class="set-item-left">
+        <t-icon prefix="icon" name="{{item.iconPath}}" size="48rpx"/>
+        <text class="set-title">{{item.title}}</text>
+      </view>
+      <t-icon prefix="icon" name="right" size="48rpx"/>
+    </view>
+  </view>
+</view>
+
+<common-dialog
+  visible="{{showVipDialog}}"
+  title="奇迹相册的用户，您好"
+  bind:confirm="closeDialog"
+  bind:cancel="closeDialog"
+>
+  <view style="text-indent: 2em;">奇迹相册是一个免费存储图片、发布动态以及评论的平台。您可以和其他成员共同维护相册,也可以保存您的个人相册。</view>
+</common-dialog>

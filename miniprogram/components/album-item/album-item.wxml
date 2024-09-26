@@ -1,0 +1,7 @@
+<!--components/album-item/album-item.wxml-->
+<view class="album-item" data-id="{{album.albumId}}" data-name="{{album.albumName}}" data-album-type="{{innerAlbum.albumType}}" bind:tap="clickAlbum">
+  <t-image class="album-cover" src="{{album.albumCover}}&imageMogr2/thumbnail/600x/interlace/1/quality/100" mode="aspectFill"/>
+  <view class="album-info">
+    <view class="album-title line-clamp-1">{{album.albumName}}</view>
+  </view>
+</view>

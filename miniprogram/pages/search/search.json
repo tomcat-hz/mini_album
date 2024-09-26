@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "common-dialog": "../../components/common-dialog/common-dialog",
+    "empty-box": "../../components/empty-box/empty-box"
+  }
+}

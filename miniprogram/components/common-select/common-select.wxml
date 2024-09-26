@@ -1,0 +1,5 @@
+<!--components/common-select/common-select.wxml-->
+<view class="select-box" bind:tap="tapSelect">
+  <t-icon prefix="icon" name="shaixuan"/>
+  <text>{{currentOption}}</text>
+</view>

@@ -1,0 +1,25 @@
+/* components/empty-box/empty-box.wxss */
+.empty-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &-image {
+    width: 400rpx;
+    height: 240rpx;
+  }
+  
+  &-tips {
+    color: var(--color-base);
+    font-size: var(--font-size-base);
+    letter-spacing: 3rpx;
+    margin: 0 auto;
+    width: 500rpx;
+    .btn {
+      display: inline-block;
+      font-weight: bold;
+    }
+  }
+}

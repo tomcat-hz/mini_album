@@ -1,0 +1,3 @@
+<!--pages/history/history.wxml-->
+<custom-navbar sticky showBack title="历史数据"/>
+<text>pages/history/history.wxml</text>

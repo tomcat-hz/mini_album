@@ -1,0 +1,26 @@
+{
+  "name": "miniprogram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "patch-package"
+  },
+  "keywords": [],
+  "author": "正哥",
+  "license": "ISC",
+  "dependencies": {
+    "tdesign-miniprogram": "^1.4.0"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=8.9",
+    "npm": ">= 3.0.0"
+  },
+  "volta": {
+    "node": "14.20.0"
+  }
+}

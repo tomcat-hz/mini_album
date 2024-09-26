@@ -1,0 +1,3 @@
+<!--pages/user-center/user-center.wxml-->
+<custom-navbar stick showBack title="个人中心"/>
+<form-builder form="{{form}}" bind:submit="submit"/>

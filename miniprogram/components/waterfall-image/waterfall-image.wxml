@@ -1,0 +1,21 @@
+<!--components/waterfall-image.wxml-->
+<view class="image-box" style="margin-top: {{top}}rpx;">
+  <view class="cloumn">
+    <view class="cloumn-item" wx:for="{{previewImages}}" wx:key="item" wx:for-item="item" wx:if="{{item.position === 'left' && item.status !== 'deleted'}}" wx:for-index="index" bind:tap="handleTapFile" catch:longpress="handleLongTapFile" data-file-index="{{index}}">
+      <t-image shape="round" src="{{item.url}}&imageMogr2/thumbnail/600x/interlace/1/quality/100" lazy width="{{item.width}}rpx" height="{{item.height}}rpx" mode="aspectFill"/>
+      <view hidden="{{item.status === 'view'}}">
+      <t-icon prefix="icon" size="48rpx" name="duigou1" class="choosed-image"/>
+      </view>
+      <view  hidden="{{item.status === 'view'}}" class="overlay"></view>
+    </view>
+  </view>
+  <view class="cloumn">
+    <view class="cloumn-item" wx:for="{{previewImages}}" wx:key="item" wx:for-item="item" wx:if="{{item.position === 'right' && item.status !== 'deleted'}}" wx:for-index="index" bind:tap="handleTapFile" catch:longpress="handleLongTapFile" data-file-index="{{index}}">
+      <t-image shape="round" src="{{item.url}}&imageMogr2/thumbnail/600x/interlace/1/quality/100" lazy width="{{item.width}}rpx" height="{{item.height}}rpx"/>
+      <view hidden="{{item.status === 'view'}}">
+      <t-icon prefix="icon" size="48rpx" name="duigou1" class="choosed-image"/>
+      </view>
+      <view  hidden="{{item.status === 'view'}}" class="overlay"></view>
+    </view>
+  </view>
+</view>

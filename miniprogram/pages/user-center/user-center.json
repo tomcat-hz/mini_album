@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "form-builder": "../../components/form-builder/form-builder"
+  }
+}

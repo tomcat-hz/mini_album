@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "album-item": "../../components/album-item/album-item",
+    "common-dialog": "../../components/common-dialog/common-dialog",
+    "form-builder": "../../components/form-builder/form-builder",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+    "t-switch": "tdesign-miniprogram/switch/switch",
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-input": "tdesign-miniprogram/input/input"
+  }
+}

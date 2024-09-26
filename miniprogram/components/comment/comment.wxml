@@ -1,0 +1,32 @@
+<!--components/comment/comment.wxml-->
+<!-- 评论 -->
+<t-popup visible="{{show}}" close-on-overlay-click bind:visible-change="onVisibleChange" placement="bottom" style="padding-bottom: {{keyBoardHeight === 0 ? 0 : keyBoardHeight}}rpx;transition: transform {{duration}}s ease, padding-bottom {{duration}}s linear">
+  <view slot="content" class="textarea">
+    <t-textarea
+      wx:if="{{show}}"
+      adjust-position="{{false}}"
+      style="height: 200rpx;"
+      cursor-spacing="{{200}}"
+      bind:change="addContent"
+      t-class="external-class"
+      placeholder="一言一行皆因心，心善则事顺。"
+      value="{{content}}"
+      bordered
+      maxlength="1000"
+      disableDefaultPadding="{{true}}"
+      indicator
+      fixed
+      show-confirm-bar="{{false}}"
+      focus="{{focusComment}}"
+      bind:keyboardheightchange="keyboardheightchange"
+    />
+    <view class="comment-tool">
+      <view class="icon">
+        <t-icon prefix="icon" name="jianpan" size="48rpx" bind:tap="clickKeyBoard"/>
+        <!-- <t-icon prefix="icon" name="zhaopian" size="48rpx"/> -->
+        <!-- <t-icon prefix="icon" name="ku" size="48rpx"/> -->
+      </view>
+      <view class="comment-btn" catchtap="addComment">发送</view>
+    </view>
+  </view>
+</t-popup>

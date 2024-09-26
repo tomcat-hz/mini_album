@@ -1,0 +1,3 @@
+<!--pages/notice/notice.wxml-->
+<custom-navbar sticky showBack title="公告栏"/>
+<text>pages/notice/notice.wxml</text>

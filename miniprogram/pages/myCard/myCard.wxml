@@ -1,0 +1,4 @@
+<!--pages/myCard/myCard.wxml-->
+<custom-navbar sticky showBack title="我的证件"/>
+<local-upload title="身份证正面" key="card-front"/>
+<local-upload title="身份证反面" key="card-back"/>

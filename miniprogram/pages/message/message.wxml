@@ -1,0 +1,28 @@
+<!--pages/message/message.wxml-->
+<view style="height: calc(100vh - {{tabbarHeight}}rpx);overflow: scroll;">
+  <custom-navbar title="您的消息" />
+  <view class="message">
+    <common-select currentOption="全部已读" bind:tapSelect="changeShowReadAllDialog"/>
+
+    <view class="message-box">
+      <view class="message-item" wx:for="{{messageList}}" wx:key="item" bind:tap="tapMessage" data-message-type="{{item.type}}">
+        <t-badge count="{{item.count > 99 ? '99+' : item.count}}">
+          <t-icon wx:if="{{item.iconPath}}" prefix="icon" name="{{item.iconPath}}" size="64rpx"/>
+          <view wx:else="{{item.iconName && item.iconStyle}}" style="{{item.iconStyle}}">{{item.iconName}}</view>
+        </t-badge>
+        <text class="title">{{item.title}}</text>
+        <t-icon prefix="icon" name="right" size="32rpx"/>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<common-dialog
+  visible="{{showReadAllDialog}}"
+  title="温馨提示"
+  bind:confirm="closeDialog"
+  bind:cancel="closeDialog"
+>
+  <view>是否一键已读所有消息?</view>
+</common-dialog>

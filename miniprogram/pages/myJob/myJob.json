@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "local-upload": "../../components/local-upload/local-upload"
+  }
+}

@@ -1,0 +1,28 @@
+<!--components/story-content/story-content.wxml-->
+<view wx:if="{{story}}" id="story" class="story-content" slot="extra" bindtap="storyDetail">
+  <common-header item="{{story}}"/>
+  <view class="content-box">
+    <content-view wx:if="{{story.content}}" content="{{story.content}}" fullText="{{fullText}}"/>
+    <view class="img-box">
+      <t-image shape="round" wx:for="{{story.files}}" wx:for-item="image" wx:for-index="imageIndex" wx:key="url" src="{{image.url}}&imageMogr2/thumbnail/600x/interlace/1/quality/100" catchtap="previewImage" data-url="{{image.url}}" style="{{photoStyle}}" mode="aspectFill"/>
+      <view wx:if="{{story.files[0].mode === 1}}" class="image-box-type">长图</view>
+    </view>
+  </view>
+  <view class="story-tool">
+    <view class="story-tool-icon">
+      <t-icon prefix="icon" name="{{story.isStar === 'Y' ? 'favorites-fill' : 'favorites'}}" size="48rpx" data-id="{{story.storyId}}" data-type="favorites" catchtap="clickIcon"/>
+      <t-icon prefix="icon" name="{{story.isLike === 'Y' ? 'follow-fill' : 'follow'}}" size="48rpx" data-type="like" catchtap="clickIcon"/>
+      <t-icon prefix="icon" name="{{isComment ? 'weixinliaotian' : 'jinyan'}}" size="48rpx" catchtap="changeShowComment"/>
+      <!-- <share catchtap="clickIcon">
+        <t-icon prefix="icon" name="fenxiang" size="48rpx" data-id="{{story.storyId}}"/>
+      </share> -->
+    </view>
+    <view class="story-tool-info">
+      <view class="story-tool-text">{{story.likeCount}}人觉得很赞</view>
+      <view class="story-tool-text">共{{story.totalComment}}条评论</view>
+    </view>
+  </view>
+  <comment-view wx:if="{{showCommentList && story.commentList}}" commentList="{{story.commentList}}"/>
+</view>
+
+<comment wx:if="{{story}}" show="{{showComment}}" albumId="{{story.albumId}}" storyId="{{story.storyId}}" replyUserId="{{story.userId}}" commentParentId="0" bind:commentSuccess="commentSuccess" bind:closeComment="changeShowComment"/>

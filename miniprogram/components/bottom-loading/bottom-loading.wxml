@@ -1,0 +1,10 @@
+<!--components/bottom-loading/bottom-loading.wxml-->
+<view class="load-box" style="margin-bottom: calc({{safeAreaBottom}}rpx);">
+  <view class="load-box-loading" hidden="{{!isLoading}}">
+    <text>加载中</text>
+    <image class="loading" src="../../static/loading.png" mode=""/>
+  </view>
+  <view hidden="{{isLoading}}">
+    <text hidden="{{hasMore}}">没有更多了~</text>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bottom-loading": "/components/bottom-loading/bottom-loading",
+    "comment-list": "/components/comment-list/comment-list"
+  }
+}

@@ -1,0 +1,8 @@
+<!--components/empty-box/empty-box.wxml-->
+<view class="empty-box" style="margin-top: {{top}};margin-bottom: {{top}};">
+  <image class="empty-box-image" mode="widthFix" src="../../static/empty/{{url}}"/>
+  <view class="empty-box-tips">
+    <view wx:if="{{message}}">{{message}}</view>
+    <slot wx:else></slot>
+  </view>
+</view>

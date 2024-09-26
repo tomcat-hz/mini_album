@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "qrcode-builder": "../../components/qrcode-builder/qrcode-builder"
+  }
+}

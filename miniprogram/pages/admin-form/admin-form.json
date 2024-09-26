@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "form-builder": "../../components/form-builder/form-builder",
+    "common-dialog": "../../components/common-dialog/common-dialog"
+  }
+}

@@ -1,0 +1,11 @@
+<!--components/comment-view/comment-view.wxml-->
+<view class="comment-box" wx:if="{{commentList.total}}">
+  <view wx:for="{{commentList.rows}}" wx:key="item" class="line-clamp-2">
+    <text class="nickname mr-8">{{item.nickName}}</text>
+    <block wx:if="{{item.isLandlord === 'N'}}">回复<text class="nickname ml-8 mr-8">{{item.replyNickName}}</text>
+    </block>
+    <t-tag wx:if="{{item.isLandlord === 'Y' && item.commentParentId !== 0}}" theme="danger" size="small" shape="round">楼主</t-tag>
+    <text class="ml-8">：{{item.content}}</text>
+  </view>
+  <view wx:if="{{commentList.total > 2}}" class="tips">共{{commentList.total}}条相关回复</view>
+</view>

@@ -1,0 +1,15 @@
+<!--pages/album-list/album-list.wxml-->
+<!-- <album-list-item/> -->
+<scroll-container
+  hasTabbar
+  isEmpty="{{total === 0}}"
+  bind:scroll="handleScroll" 
+  loading="{{pageLoading}}"
+  bind:refresh="initData">
+  <custom-navbar slot="header" sticky showBack title="相册列表" />
+  <empty-box wx:if="{{total === 0}}" slot="empty" message="点击加号，创建您的第一个相册" bind:tapAdd="createAlbum"/>
+  <view wx:else slot="content">
+    <waterfall-image images="{{images}}"/>
+    <bottom-loading isLoading="{{isLoading}}" hasMore="{{total > imageNum}}" bind:loadMore="loadMore"/>
+  </view>
+</scroll-container>

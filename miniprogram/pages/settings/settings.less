@@ -1,0 +1,66 @@
+/* pages/settings/settings.wxss */
+.settings {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-base);
+  color: rgba(0, 0, 0, .8);
+  background-color: white;
+  padding-top: 64rpx;
+  border-radius: 30rpx 30rpx 0 0;
+  background-color: white;
+  margin-bottom: -1px;
+}
+
+.album-header {
+  position: absolute;
+  display: flex;
+  width: calc(100vw - 64rpx);
+  justify-content: space-between;
+  align-items: center;
+  gap: 20rpx;
+  top: calc(450rpx - 32rpx - var(--line-height-base));
+  left: 32rpx;
+  color: var(--color-5);
+  line-height: var(--line-height-base);
+  font-size: var(--font-size-min);
+  .album-info {
+    padding: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32rpx;
+    &-item {
+      display: flex;
+      padding: 6rpx 15rpx;
+      border-radius: 10rpx;
+      gap: 12rpx;
+      background-color: var(--bg-color-6);
+    }
+    &-title {
+      display: flex;
+      align-items: center;
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
+
+.album-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  justify-content: center;
+  align-items: center;
+  .album-item {
+    position: relative;
+    width: 300rpx;  
+    height: 200rpx;
+    border-radius: 20rpx; 
+    overflow: hidden;
+    .album-cover {
+      width: 100%;
+      height: 100%;
+      border-radius: 20rpx;
+      overflow: hidden;
+    }
+  }
+}

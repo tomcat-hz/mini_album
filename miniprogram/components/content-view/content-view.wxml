@@ -1,0 +1,13 @@
+<!--components/content-view.wxml-->
+<block wx:if="{{fullText}}">
+  <text class="full-text">{{content}}</text>
+</block>
+<block wx:else>
+  <view hidden="{{!showPreview}}">
+    <text class="preview">{{content}}</text>
+  </view>
+  <view hidden="{{showPreview}}">
+    <text class="full-text">{{content}}</text>
+  </view>
+  <text wx:if="{{hasFullText}}" class="preview-btn" catch:tap="changePreview">{{showPreview ? tips[0] : tips[1]}}</text>
+</block>

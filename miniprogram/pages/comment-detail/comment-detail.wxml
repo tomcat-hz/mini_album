@@ -1,0 +1,16 @@
+<!--pages/comment-detail/comment-detail.wxml-->
+<custom-navbar sticky showBack title="评论详情" />
+
+<t-loading class="common-loading" wx:if="{{pageLoading}}" theme="circular" size="60rpx" text="加载中，请稍等..." />
+
+<scroll-view
+  wx:else
+  enhanced="{{true}}"   
+  bounces="{{false}}"
+  bindscrolltolower="loadMore"
+  style="max-height: calc(100vh - {{toolTop}}rpx - {{toolHeight}}rpx);"
+  scroll-y="{{true}}"
+  show-scrollbar="{{false}}">
+  <comment-list parentComment="{{parentComment}}" albumId="{{queryParams.albumId}}" storyId="{{queryParams.storyId}}" commentList="{{commentList}}" commentParentId="{{queryParams.commentParentId}}"/>
+  <bottom-loading wx-if="{{commentList.total}}" isLoading="{{isLoading}}" hasMore="{{commentList.total > commentList.rows.length}}" safeAreaBottom="{{safeAreaBottom}}"/>
+</scroll-view>

@@ -1,0 +1,82 @@
+<!--components/custom-navbar/custom-navbar.wxml-->
+<t-sticky disabled="{{!sticky}}">
+  <view class="{{blur ? 'container blur' : 'container'}}" style="padding-top: {{toolTop}}rpx;background-color: {{ showEdit ? 'transparent' : 'var(--bg-color-1)'}};{{ showBg ? 'background:linear-gradient(to bottom right, rgba(255, 255, 255, .4), transparent);z-index: 1' : ''}}">
+    <view class="btn-box" wx:if="{{showEdit}}" style="width: {{headerWidth}};">
+      <view wx:if="{{fileAction === 'edit'}}" class="choose-btn" bind:tap="onFileAction">选择</view>
+      <view wx:else class="choose-btn" bind:tap="onFileAction">取消</view>
+      <!-- <view class="choose-btn">全选</view> -->
+    </view>
+    <view wx:elif="{{showUserInfo}}" style="width: {{headerWidth}};">
+      <view class="user-info" wx:if="{{isLogin}}">
+        <t-avatar size="100rpx" bind:tap="handleAvatarDialog" image="{{userInfo.avatar}}"></t-avatar>
+        <view class="user-info-text">
+          <view class="name">{{userInfo.nickName}}</view>
+          <view class="sign">
+            <view>{{userInfo.signature}} </view>
+            <view class="user-center" bind:tap="userCenter">
+              <t-icon prefix="icon" name="qrcode" size="42rpx" color="rgba(0, 0, 0, 0.6)"/>
+              <t-icon name="chevron-right" size="42rpx" color="rgba(0, 0, 0, 0.4)"/>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:elif="{{showSearch}}" style="width: {{headerWidth}};display: flex;align-items: center;">
+      <t-icon prefix="icon" name="left" size="42rpx" bind:tap="back" color="rgba(0,0,0,.4)" wx:if="{{autofocus}}"/>
+      <t-input
+        disabled="{{!autofocus}}"
+        focus="{{autofocus}}"
+        placeholder="{{searchTxt}}"
+        borderless="{{true}}"
+        value="{{searchContent}}"
+        bindchange="onSearchChange"
+        bind:tap="onClickSearch"
+        style="background-color: var(--bg-color-2);padding: 8rpx 32rpx;border-radius: 28rpx;"
+      >
+        <view slot="suffix-icon">
+          <t-icon name="search" size="38rpx" bind:tap="search"/>
+        </view>
+      </t-input>
+    </view>
+    <view wx:elif="{{!isPc}}" class="title-box" style="height:{{toolHeight}}rpx;">
+      <view class="back-icon" wx:if="{{showBack}}" bind:tap="back">
+        <t-icon prefix="icon" name="left" size="32rpx" />返回
+      </view>
+      <view wx:if="{{title}}" class="title">
+        {{title}}<t-icon wx:if="{{showSetting}}" prefix="icon" name="shezhi" bind:tap="setting" size="48rpx"/>
+      </view>
+    </view>
+  </view>
+</t-sticky>
+
+<t-dialog
+  visible="{{showUserDialog}}"
+  confirm-btn="确定"
+  cancel-btn="取消"
+  bind:confirm="confirmDialog"
+  bind:cancel="handleAvatarDialog"
+>
+  <view class="user-form" slot="content">
+    <button class="choose-avatar-btn" open-type="chooseAvatar" bind:chooseavatar="chooseAvatar"></button>
+    <t-avatar image="{{formData.avatar}}" size="100rpx" class="user-avatar" shape="circle" icon="user"/>
+    <t-input
+      borderless
+      class="dialog-input"
+      placeholder="请输入昵称"
+      type="nickname"
+      value="{{formData.nickName}}"
+      bind:change="changeInput"  
+      data-field="nickName" 
+      placeholder-class="placeholder"
+    />
+    <t-input
+      borderless
+      class="dialog-input"
+      placeholder="请输入签名"
+      value="{{formData.signature}}"
+      bind:change="changeInput"  
+      data-field="signature" 
+      placeholder-class="placeholder"
+    />
+  </view>
+</t-dialog>

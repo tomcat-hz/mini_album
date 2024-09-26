@@ -1,0 +1,44 @@
+/* components/comment-list/comment-list.wxss */
+.comment-list {
+  margin: 0 0 32rpx;
+  &-item {
+    margin: 32rpx 0;
+    &-box {
+      padding: 32rpx;
+      .comment-father {
+        font-size: var(--font-size-base);
+        margin-left: calc(96rpx + 16rpx);
+        color: var(--color-base);
+        .nickname {
+          display: inline-block;
+          color: var(--color-6);
+        }
+        .comment-icon {
+          margin: 32rpx 0;
+          display: flex;
+          align-items: center;
+          .like-num {
+            font-weight: lighter;
+            margin: 0 16rpx 0 8rpx;
+          }
+        }
+        .comment-son {
+          border-radius: 8rpx;
+          background-color: var(--bg-color-2);
+          padding: 32rpx;
+          .comment-content {
+            flex-wrap: wrap;
+            gap: 10rpx;
+            .comment-user {
+              color: var(--color-6);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.line {
+  border-bottom: 20rpx solid #dddddd;
+}

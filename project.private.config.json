@@ -1,0 +1,172 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "mini",
+  "setting": {
+    "compileHotReLoad": false,
+    "urlCheck": false,
+    "autoAudits": false,
+    "lazyloadPlaceholderEnable": false,
+    "skylineRenderEnable": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "设置页面",
+          "pathName": "pages/settings/settings",
+          "query": "albumId=11",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "动态列表",
+          "pathName": "pages/storys/storys",
+          "query": "albumId=10&albumName=正哥相册",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "相册设置",
+          "pathName": "pages/settings/settings",
+          "query": "albumId=10",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "相册列表",
+          "pathName": "pages/album-list/album-list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "消息",
+          "pathName": "pages/message/message",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "tab相册列表",
+          "pathName": "pages/album/album",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "成员管理",
+          "pathName": "pages/member/member",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "相册列表",
+          "pathName": "pages/album-list/album-list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "评论详情",
+          "pathName": "pages/comment-detail/comment-detail",
+          "query": "storyId=1&commentId=4",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "动态详情",
+          "pathName": "pages/story-detail/story-detail",
+          "query": "storyId=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "工具箱",
+          "pathName": "pages/tool/tool",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的简历",
+          "pathName": "pages/myJob/myJob",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的证件",
+          "pathName": "pages/myCard/myCard",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "动态页面",
+          "pathName": "pages/storys/storys",
+          "query": "albumId=9&albumName=%E6%AD%A3%E5%93%A5%E7%9B%B8%E5%86%8C",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "上传页面",
+          "pathName": "pages/upload/upload",
+          "query": "action=uploadImage",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "相册设置",
+          "pathName": "pages/settings/settings",
+          "query": "albumId=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "搜索页",
+          "pathName": "pages/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/my/my",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "收藏",
+          "pathName": "pages/like/like",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "创建动态",
+          "pathName": "pages/upload/upload",
+          "query": "action=createStory&albumId=8",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "创建相册",
+          "pathName": "pages/upload/upload",
+          "query": "action=createAlbum",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "libVersion": "3.4.7"
+}

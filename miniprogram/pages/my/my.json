@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "t-progress": "tdesign-miniprogram/progress/progress",
+    "common-dialog": "../../components/common-dialog/common-dialog"
+  }
+}

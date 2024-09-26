@@ -1,0 +1,45 @@
+/* components/album-item/album-item.wxss */
+
+/* 相册项 */  
+.album-item {
+  position: relative;
+  width: 300rpx;  
+  height: 200rpx;
+  border-radius: 20rpx; 
+  overflow: hidden;
+  .album-cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx;
+    overflow: hidden;
+  }
+  /* 相册信息 */  
+  .album-info {
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;   
+    width: 100%;  
+    height: 90rpx;
+    box-sizing: border-box; 
+    position: absolute;  
+    bottom: 0;
+    padding: 10rpx 20rpx;
+    background-color: var(--color-5);
+    /* 相册标题 */  
+    .album-title {
+      box-sizing: border-box;
+      font-size: var(--font-size-base); 
+      font-weight: var(--font-weight-bold);  
+      color: var(--color-base);
+    }
+  }  
+}
+
+.album-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  justify-content: center;
+  align-items: center;
+}
+      

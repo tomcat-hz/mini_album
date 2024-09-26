@@ -1,0 +1,30 @@
+@selectors: 8, 16, 32;
+@selectors1: 1, 2, 3;
+
+each(@selectors, {
+  .mb-@{value} { margin-bottom: (@value * 1rpx); }
+  .mt-@{value} { margin-top: (@value * 1rpx); }
+  .ml-@{value} { margin-left: (@value * 1rpx); }
+  .mr-@{value} { margin-right: (@value * 1rpx); }
+  .pb-@{value} { padding-bottom: (@value * 1rpx); }
+  .pt-@{value} { padding-top: (@value * 1rpx); }
+  .pl-@{value} { padding-left: (@value * 1rpx); }
+  .pr-@{value} { padding-right: (@value * 1rpx); }
+});
+
+each(@selectors1, {
+  .line-clamp-@{value} { 
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    display: -webkit-box;
+    -webkit-line-clamp: @value;
+    max-height: (@value * 48rpx);
+    -webkit-box-orient: vertical;  
+    word-wrap: break-word; /* 允许在单词内换行 */  
+    word-break: break-all; /* 强制换行 */  
+   }
+});
+
+.inline-block {
+  display: inline-block;
+}

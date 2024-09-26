@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "upload-button": "../../components/upload-button/upload-button",
+    "album-item": "../../components/album-item/album-item",
+    "share": "../../components/share/share",
+    "empty-box": "../../components/empty-box/empty-box"
+  }
+}

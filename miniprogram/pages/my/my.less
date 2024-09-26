@@ -1,0 +1,118 @@
+/* pages/my/my.wxss */
+.vip-box {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 686rpx;  
+  height: 168rpx;  
+  background-color: #fff; /* 设置白色背景，与浅灰色背景形成对比 */  
+  border-radius: 15rpx; /* 增加圆角，使卡片看起来更柔和 */  
+  // box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.1); /* 添加阴影效果，增加立体感 */  
+  margin: 30rpx auto; /* 添加上下外边距，并水平居中 */  
+  overflow: hidden; /* 确保卡片内容不会溢出 */  
+  transition: all 0.3s ease; /* 为所有可过渡的属性添加过渡效果，如阴影、背景色等 */  
+}
+
+.vip-card {
+  position: absolute;
+  width: 686rpx;
+  height: 168rpx;
+}
+
+.vip-text {
+  display: flex;
+  width: 686rpx;
+  height: 168rpx;
+  box-sizing: border-box;
+  padding: 32rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vip-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vip-info-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  letter-spacing: 0.6rpx;
+  line-height: 48rpx;
+  color: rgba(27, 27, 27, 1);
+}
+
+.vip-info-text {
+  font-size: 28rpx;
+  line-height: 44rpx;
+  color: rgba(128, 128, 128, 1);
+}
+
+.card-box {
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 336rpx;
+  height: 156rpx;
+  padding: 32rpx 32rpx 48rpx;
+  border-radius: 8rpx;
+  background-color: var(--bg-color-2);
+}
+
+.card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 28rpx;
+}
+
+.card-data {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.set-box {
+  margin: 64rpx 0;
+  display: flex;
+  flex-direction: column;
+  gap: 64rpx;
+}
+
+.set-item {
+  display: flex;
+  height: 48rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48rpx;
+}
+
+.set-item-left {
+  display: flex;
+  align-items: center;
+}
+
+.set-title {
+  margin-left: 32rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 100%;
+  color: var(--color-base);
+}
+
+.set-right {
+  height: 40rpx;
+  width: 25rpx;
+}

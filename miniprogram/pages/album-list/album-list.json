@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "album-list-item": "../../components/album-list-item/album-list-item",
+    "waterfall-image": "../../components/waterfall-image/waterfall-image",
+    "bottom-loading": "../../components/bottom-loading/bottom-loading",
+    "empty-box": "../../components/empty-box/empty-box"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
+    "story-content": "/components/story-content/story-content",
+		"content-view": "/components/content-view/content-view",
+    "bottom-loading": "../../components/bottom-loading/bottom-loading",
+    "upload-button": "../../components/upload-button/upload-button",
+    "empty-box": "../../components/empty-box/empty-box"
+  }
+}

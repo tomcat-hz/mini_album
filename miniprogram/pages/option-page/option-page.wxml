@@ -1,0 +1,2 @@
+<!--pages/option-page/option-page.wxml-->
+<custom-navbar stick showBack/>

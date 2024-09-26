@@ -1,0 +1,28 @@
+<!--pages/album/album.wxml-->
+<!-- <custom-navbar sticky showSearch  bind:tapSearch="clickSearch" /> -->
+<custom-navbar title="相册列表" />
+
+<t-loading class="common-loading" wx:if="{{pageLoading}}" theme="circular" size="60rpx" text="加载中，请稍等..." />
+<view wx:else style="height: calc(100vh - {{tabbarHeight}}rpx - {{toolTop}}rpx - 64rpx);padding-top: 32rpx;box-sizing: border-box;">
+  <view class="album-box" wx:if="{{albums.length}}">
+    <view class="album-list" wx:for="{{albums}}" wx:key="item">
+      <view class="album-list-header">
+        <text class="album-list-title">{{item.title}}</text>
+        <!-- <view class="album-list-info" bind:tap="allAlbum">
+          <text>查看全部</text>
+          <t-icon prefix="icon" name="right" size="32rpx"/>
+        </view> -->
+      </view>
+      <scroll-view 
+      scroll-x="{{true}}"
+      show-scrollbar="{{false}}">
+        <view style="display: inline-flex;gap:32rpx;margin: 16rpx 32rpx 16rpx;">
+          <album-item wx:for="{{item.albumList}}" wx:for-item="album" wx:key="album" album="{{album}}"/>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <empty-box wx:else style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);" message="点击加号，创建您的第一个相册" bind:tapAdd="createAlbum"/>
+</view>
+
+<upload-button bind:tapUpload="createAlbum"/>

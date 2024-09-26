@@ -1,0 +1,26 @@
+/* components/content-view.wxss */
+.preview {
+  font-size: var(--font-size-base);
+  line-height: 48rpx;
+  margin: 16rpx 0;
+  color: var(--color-base);
+  display: -webkit-box;
+  word-break: break-all;           /* 换行模式 */
+  text-overflow: ellipsis;         /* 超出文字用省略号代替 */
+  overflow: hidden;                /* 多出部分隐藏 */
+  -webkit-box-orient: vertical;    /* 竖直方向的超出和隐藏 */
+  -webkit-line-clamp: 4;
+}
+.full-text {
+  font-size: var(--font-size-base);
+  line-height: 48rpx;
+  margin: 16rpx 0;
+  color: var(--color-base);
+  display: -webkit-box;
+  word-break: break-all;
+}
+.preview-btn {
+  display: inline-block;
+  color: var(--color-4);
+  font-size: 32rpx;
+}

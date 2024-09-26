@@ -1,0 +1,15 @@
+<!--pages/admin-form/admin-form.wxml-->
+<custom-navbar stick showBack title="相册管理"/>
+<form-builder form="{{form}}" bind:switch="switch"/>
+<view wx:if="{{isAdmin}}" style="padding: 32rpx 200rpx;text-align: center;margin-top: auto;">
+  <t-button size="large" block bind:tap="exitAlbum">解散该相册</t-button> 
+</view>
+
+<common-dialog
+  visible="{{showLeaveDialog}}"
+  title="温馨提示"
+  bind:confirm="confirmLeave"
+  bind:cancel="closeDialog"
+>
+  <view>是否解散当前相册?</view>
+</common-dialog>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "input-builder": "../../components/input-builder/input-builder"
+  }
+}

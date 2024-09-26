@@ -1,0 +1,39 @@
+/* pages/upload/upload.wxss */
+
+.base-form {
+  padding: 0 32rpx;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32rpx;
+  &-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10rpx;
+  }
+  &-label {
+    margin: 20rpx 0;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-1);
+  }
+  &-tips {
+    margin:16rpx 0 0 0;
+    font-size: 26rpx;
+    color: rgb(0, 0, 0, .2);
+    text-align: right;
+  }
+
+  // 上传组件样式
+  .upload-title {
+    margin: 16rpx 0;
+  }
+  .t-grid, .t-grid-item {
+    background-color: transparent !important;
+  }
+}
+
+.submit-btn {
+  text-align: end;
+  padding: 16rpx 0;
+}

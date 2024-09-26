@@ -1,0 +1,3 @@
+<!--pages/myJob/myJob.wxml-->
+<custom-navbar sticky showBack title="我的简历"/>
+<local-upload title="简历" key="job" mode="job"/>

@@ -1,0 +1,19 @@
+<!--pages/story-detail/story-detail.wxml-->
+<scroll-container
+  isEmpty="{{commentList.total === 0}}"
+  wx:if="{{story}}"
+  loading="{{pageLoading}}"
+  refresh="{{false}}">
+  <view slot="header">
+    <custom-navbar sticky showBack title="动态详情"/>
+    <story-content story="{{story}}" storyIndex="{{storyIndex}}" showCommentList="{{false}}" isDetail bind:commentSuccess="commentStorySuccess" bind:tapIcon="tapIcon" isComment="{{albumSetting.isComment === 'Y' || albumSetting.albumUserType !== AlbumUserType.MEMBER}}" tips="评论功能暂未开启，联系管理员开启"/>
+    <view class="line"></view>
+  </view>
+  <empty-box url="chat-bubbles.png" wx:if="{{commentList.total === 0}}" slot="empty" message="快来第一个评论吧!"/>
+  <view wx:else slot="content">
+    <comment-list commentList="{{commentList}}" albumId="{{queryParams.albumId}}" storyId="{{queryParams.storyId}}"/>
+    <bottom-loading wx-if="{{commentList.total}}" isLoading="{{isLoading}}" hasMore="{{commentList.total > commentList.rows.length}}" safeAreaBottom="{{safeAreaBottom}}" bind:loadMore="loadMore"/>
+  </view>
+</scroll-container>
+
+<t-loading wx:else class="common-loading" theme="circular" size="60rpx" text="加载中，请稍等..." />

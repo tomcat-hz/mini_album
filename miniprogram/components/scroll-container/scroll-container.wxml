@@ -1,0 +1,25 @@
+<!--components/scroll-container/scroll-container.wxml-->
+  <scroll-view
+    class="scroll-view"
+    style="height: calc(100vh - {{hasTabbar ? tabbarHeight : headerHeight}}rpx);"
+    enhanced="{{true}}"   
+    bounces="{{false}}"
+    scroll-y="{{true}}"
+    bind:scroll="handleScroll"
+    show-scrollbar="{{false}}"
+    bindscrolltolower="loadMore">
+    <view class="container" style="height: inherit">
+      <view class="header">
+        <slot name="header"></slot>
+      </view>
+      <view class="content">
+        <t-loading class="content-loading" wx:if="{{loading}}" theme="circular" size="60rpx" text="加载中，请稍等..." />
+        <block wx:else>
+          <view wx:if="{{isEmpty}}" class="content-empty">
+            <slot name="empty"></slot>
+          </view>
+          <slot wx:else name="content"></slot>
+        </block>
+      </view>
+    </view>
+  </scroll-view>

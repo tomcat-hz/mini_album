@@ -1,0 +1,30 @@
+/* components/bottom-loading/bottom-loading.wxss */
+.load-box {
+  display: inline-flex;
+  justify-content: center;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  height: var(--line-height-base);
+  width: 100vw;
+  color: rgba(0, 0, 0, 0.8);
+  &-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rpx;
+  }
+}
+
+/* 动画效果 */
+.loading {
+  width: 32rpx;
+  height: 32rpx;
+  animation:loading 5s infinite;
+  -webkit-animation:loading 3s linear infinite;
+}
+
+@keyframes loading
+{
+  form {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}

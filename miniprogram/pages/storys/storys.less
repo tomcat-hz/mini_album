@@ -1,0 +1,52 @@
+/* pages/storys/storys.wxss */
+.setting-box {
+  margin: 0 32rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notice-dialog {
+  padding: 32rpx;
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32rpx;
+    line-height: 36rpx;
+    .title {
+      flex: 1;
+      text-align: center;
+      font-weight: 600;
+      font-size: 36rpx;
+    }
+    .btn-close {
+      width: 80rpx;
+      height: 45rpx;
+      font-size: 30rpx;
+    }
+  }
+  .notice-image {
+    width: calc(100vw - 64rpx);
+    border-radius: 16rpx;
+  }
+  .content {
+    font-size: 32rpx;
+    line-height: 48rpx;
+    text-indent: 2rpx;
+    color: rgba(0, 0, 0, .8);
+    text-indent: 2em;
+  }
+}
+
+.notice-box {
+  margin-top: 32rpx;
+}
+
+.story-box {
+  margin: 32rpx 0;
+  .story-item {
+    border-bottom: 20rpx solid #dddddd;
+  }
+  .story-item:last-child {
+    border: none;
+  }
+}

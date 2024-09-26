@@ -1,0 +1,13 @@
+<!--components/common-dialog/common-dialog.wxml-->
+<t-dialog
+  visible="{{visible}}"
+  title="{{title}}"
+  confirm-btn="确认"
+  cancel-btn="取消"
+  bind:confirm="confirm"
+  bind:cancel="cancel"
+>
+  <view class="mt-32" slot="content">
+    <slot />
+  </view>
+</t-dialog>

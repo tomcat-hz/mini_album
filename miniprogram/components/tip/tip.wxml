@@ -1,0 +1,2 @@
+<!--components/tip/tip.wxml-->
+<text class="tip">{{message}}</text>

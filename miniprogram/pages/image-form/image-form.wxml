@@ -1,0 +1,3 @@
+<!--pages/choose-image-page/choose-image-page.wxml-->
+<custom-navbar stick showBack title="{{title}}"/>
+<form-builder form="{{form}}" bind:submit="submit"/>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "t-upload": "tdesign-miniprogram/upload/upload",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-input": "tdesign-miniprogram/input/input",
+    "upload": "../../components/upload/upload"
+  }
+}

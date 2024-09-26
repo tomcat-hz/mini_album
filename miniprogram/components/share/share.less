@@ -1,0 +1,15 @@
+/* components/share/share.wxss */
+.no-effect-button {  
+  background-color: transparent; /* 透明背景 */  
+  border: none; /* 无边框 */  
+  outline: none; /* 移除轮廓 */  
+  padding: 0; /* 根据需要调整内边距 */  
+  margin: 0; /* 根据需要调整外边距 */  
+  font-size: inherit; /* 继承字体大小 */  
+  color: inherit; /* 继承文本颜色 */  
+  cursor: pointer; /* 鼠标悬停时显示小手图标，表示可点击 */  
+  /* 你可以添加其他需要的样式 */ 
+  &::after {
+    border: none;
+  }
+}

@@ -1,0 +1,8 @@
+<!--components/virtual-scroll/virtual-scroll.wxml-->
+<view style="height:{{totalHeight}}rpx">
+  <view style="transform: translateY({{innerPosition}}rpx);">
+    <view wx:for="{{showItems}}" class="scroll-item" wx:key="item">
+      虚拟滚动--{{item}}
+    </view>
+  </view>
+</view>

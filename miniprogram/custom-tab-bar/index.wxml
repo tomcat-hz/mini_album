@@ -1,0 +1,14 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<view class="tab-bar">
+  <view hidden="{{showEdit}}" wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <t-icon prefix="icon" name="{{selected === index ? item.selectedIconPath : item.iconPath}}" size="56rpx"/>
+    <view style="color: {{selected === index ? selectedColor : color}};font-size: 20rpx;">{{item.text}}</view>
+  </view>
+  <view wx:if="{{showEdit}}" class="edit-box">
+    <!-- <image hidden="{{choosedFileNum !== 0}}" src="./image/share-disabled.png" class="edit-box-image" mode=""/>
+    <image bind:tap="shareChoosedFile" hidden="{{choosedFileNum === 0}}" src="./image/share.png" class="edit-box-image" mode=""/> -->
+    <view>{{choosedFileNum === 0 ? '选择项目' : '已选择' + choosedFileNum + '张照片'}}</view>
+    <image hidden="{{choosedFileNum !== 0}}" src="./image/delete-disbaled.png" class="edit-box-image" mode=""/>
+    <image bind:tap="deleteChoosedFile" hidden="{{choosedFileNum === 0}}" src="./image/delete.png" class="edit-box-image" mode=""/>
+  </view>
+</view>

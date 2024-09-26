@@ -1,0 +1,68 @@
+/* components/story-content/story-content.wxss */
+.story-content {
+  margin: 32rpx;
+  .story-container1 {
+    margin: 16rpx 0;
+    color: rgba(0, 0, 0, .8);
+    display: -webkit-box;
+    word-break: break-all;           /* 换行模式 */
+    text-overflow: ellipsis;         /* 超出文字用省略号代替 */
+    overflow: hidden;                /* 多出部分隐藏 */
+    -webkit-box-orient: vertical;    /* 竖直方向的超出和隐藏 */
+    -webkit-line-clamp: 4; 
+  }
+  .story-container2 {
+    margin: 16rpx 0;
+    color: rgba(0, 0, 0, .8);
+  }
+  .content-box {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10rpx;
+    overflow: hidden;
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+    .img-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12rpx;
+    }
+    &-type {
+      padding: 0 10rpx;
+      line-height: var(--line-height-base);
+      border-radius: var(--border-radius);
+      font-size: var(--font-size-base);
+      background-color: var(--bg-color-4);
+      color: var(--color-8);
+      position: absolute;
+      bottom: 10rpx;
+      right: 10rpx;
+    }
+  }
+  .story-tool {
+    margin: 30rpx 0;
+    display: flex;
+    gap: 16rpx;
+    flex-direction: column;
+    justify-content: center;
+    &-info {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-text {
+      font-size: var(--font-size-min);
+      color: var(--color-2);
+    }
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 30rpx;
+      .icon {
+        width: 40rpx;
+        height: 40rpx;
+      }
+    }
+  }
+}

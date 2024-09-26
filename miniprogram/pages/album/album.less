@@ -1,0 +1,68 @@
+/* pages/album/album.wxss */
+
+.album-box {
+  .album-list {
+    margin-bottom: 24rpx;
+    .album-list-header {
+      padding: 0 32rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .album-list-title {
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-base);
+        letter-spacing: 0;
+        line-height: 48rpx;
+      }
+      .album-list-info {
+        font-size: var(--font-size-min);
+        color: var(--color-1);
+        display: flex;
+        align-items: center;
+        &-icon {
+          width: 32rpx;
+          height: 32rpx;
+        }
+      }
+    }
+    
+    .album-box {
+      padding-left: 32rpx;
+      display: inline-flex;
+      gap: 30rpx;
+    }
+    
+    .album-box::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance:none;
+      width: 0;
+      height: 0;
+      color:transparent;
+    }
+  }
+}
+
+.group-album {
+  position: fixed;
+  width: 98rpx;
+  right: 30rpx;
+  text-align: center;
+  &-title {
+    color: var(--color-1);
+    font-size: var(--font-size-min);
+    animation: wave 2s infinite ease-in-out;
+  }
+}
+
+@keyframes wave{
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

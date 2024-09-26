@@ -1,0 +1,29 @@
+<!--pages/search/search.wxml-->
+<scroll-container>
+  <view slot="header">
+    <custom-navbar sticky showSearch bind:search="search" autofocus />
+    <view class="search-box">
+      <view class="search-box-btn">
+        <text>历史搜索</text>
+        <text bind:tap="clearHistory">清空</text>
+      </view>
+      <view class="search-box-tag" wx:if="{{historyWord.length}}">
+        <t-tag  variant="outline" wx:for="{{historyWord}}" wx:key="item"> {{item}} </t-tag>
+      </view>
+      <empty-box url="magnifier.png" message="搜索历史为空" top="100rpx" wx:else/>
+    </view>
+  </view>
+  <view wx:if="{{total === 0}}" slot="empty">
+    <empty-box/>
+  </view>
+  <view wx:else slot="content">hello</view>
+</scroll-container>
+
+<common-dialog
+  visible="{{showHotWordDialog}}"
+  title="温馨提示"
+  bind:confirm="closeDialog"
+  bind:cancel="closeDialog"
+>
+  <view>是否一键清空历史记录?</view>
+</common-dialog>

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-avatar": "tdesign-miniprogram/avatar/avatar",
+    "t-sticky": "tdesign-miniprogram/sticky/sticky",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog"
+  }
+}

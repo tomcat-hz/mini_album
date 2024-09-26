@@ -1,0 +1,40 @@
+<scroll-container>
+  <view slot="header">
+    <custom-navbar sticky showBack showBg blur title="相册信息"/>
+    <t-image src="{{albumSetting.albumCover}}" width="100vw" height="500rpx" style="position: fixed;top: 0;z-index: -1;" mode="aspectFill"/>
+  </view>
+  <view slot="content" class="safe-container" style="display: flex;flex-direction: column;height: inherit;padding-top: calc({{450 - toolHeight - toolTop}}rpx);border-radius: 50rpx;">
+    <view class="album-header">
+      <view class="album-info">
+        <view class="album-info-item">
+          <t-icon class="album-info-title" name="user-1" size="32rpx"/>
+          <view class="album-info-num">{{role}}</view>
+        </view>
+        <view class="album-info-item">
+          <view class="album-info-title">成员数</view>
+          <view class="album-info-num">{{albumSetting.memberCount}}</view>
+        </view>
+        <view class="album-info-item">
+          <view class="album-info-title">动态数</view>
+          <view class="album-info-num">{{albumSetting.storyCount}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="settings">
+      <form-builder form="{{form}}"/>
+    </view>
+    <view style="padding: 32rpx 200rpx;text-align: center;margin-top: auto;">
+      <t-button size="large" block bind:tap="exitAlbum">退出相册</t-button> 
+    </view>
+  </view>
+</scroll-container>
+
+
+<common-dialog
+  visible="{{showLeaveDialog}}"
+  title="温馨提示"
+  bind:confirm="confirmLeave"
+  bind:cancel="closeDialog"
+>
+  <view>是否退出当前相册?</view>
+</common-dialog>

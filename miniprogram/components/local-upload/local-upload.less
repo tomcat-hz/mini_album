@@ -1,0 +1,30 @@
+/* components/local-upload/local-upload.wxss */
+.local-upload {
+  padding: 32rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  overflow-y: scroll;
+  &-image {
+    overflow: hidden;
+    border-radius: 10rpx;
+    width: 100%;
+    height: 100%;
+  }
+  &-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border: 2rpx dashed var(--color-1);
+  }
+  &-title {
+    font-weight: lighter;
+    color: var(--color-2);
+    font-size: var(--font-size-min);
+  }
+  &-btn {
+    color: var(--color-6);
+  }
+}

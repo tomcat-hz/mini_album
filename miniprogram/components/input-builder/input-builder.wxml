@@ -1,0 +1,37 @@
+<!--components/input-builder/input-builder.wxml-->
+<view class="input">
+  <view class="title">{{input.title}}</view>
+  <view class="desc">{{input.desc}}</view>
+  <t-input
+    wx:if="{{input.type === 'input'}}"
+    borderless
+    placeholder="{{input.placeholder}}"
+    value="{{innerValue}}"
+    bind:change="change"
+    placeholder-class="placeholder"
+    style="border: 2rpx solid var(--bg-color-2);border-radius: 12rpx;background-color: white;width: 640rpx;box-sizing: border-box;"
+  >
+    <view slot="prefix-icon">
+      <t-image width="72rpx" height="72rpx" src="{{cover}}" mode="aspectFill"/>
+    </view>
+    <t-icon slot="suffix-icon" bind:tap="clear" size="40rpx" name="close-circle-filled" color="rgba(0,0,0,.2)"/>
+  </t-input>
+  <t-textarea
+    wx:elif="{{input.type === 'textarea'}}"
+    adjust-position="{{false}}"
+    style="height: 200rpx;width: 640rpx;"
+    cursor-spacing="{{200}}"
+    bind:change="change"
+    t-class="external-class"
+    placeholder="{{input.placeholder}}"
+    value="{{innerValue}}"
+    bordered
+    maxlength="255"
+    disableDefaultPadding="{{true}}"
+    indicator
+    fixed
+    show-confirm-bar="{{false}}"
+    auto-focus
+  />
+  <t-button style="width: 320rpx;" disabled="{{disabled}}" size="large" bind:tap="confirm">确定</t-button>
+</view>

@@ -1,0 +1,22 @@
+diff --git a/node_modules/tdesign-miniprogram/miniprogram_dist/upload/upload.wxml b/node_modules/tdesign-miniprogram/miniprogram_dist/upload/upload.wxml
+index fc721a7..d3878ad 100644
+--- a/node_modules/tdesign-miniprogram/miniprogram_dist/upload/upload.wxml
++++ b/node_modules/tdesign-miniprogram/miniprogram_dist/upload/upload.wxml
+@@ -67,7 +67,7 @@
+             </block>
+             <t-icon wx:else name="{{file.status == 'reload' ? 'refresh' : 'close-circle'}}" size="24" aria-hidden />
+             <view wx:if="{{file.status == 'reload' || file.status == 'failed'}}" class="{{classPrefix}}__progress-text">
+-              {{file.status == 'reload' ? '重新上传' : '上传失败'}}
++              {{file.status == 'reload' ? '重新上传' : file.failText || '上传失败'}}
+             </view>
+           </view>
+ 
+@@ -180,7 +180,7 @@
+                   wx:if="{{file.status == 'reload' || file.status == 'failed'}}"
+                   class="{{classPrefix}}__progress-text"
+                 >
+-                  {{file.status == 'reload' ? '重新上传' : '上传失败'}}
++                  {{file.status == 'reload' ? '重新上传' : file.failText || '上传失败'}}
+                 </view>
+               </view>
+ 

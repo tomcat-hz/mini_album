@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "bottom-loading": "../../components/bottom-loading/bottom-loading",
+    "empty-box": "../../components/empty-box/empty-box",
+    "upload-button": "../../components/upload-button/upload-button",
+    "waterfall-image": "../../components/waterfall-image/waterfall-image",
+    "virtual-scroll": "../../components/virtual-scroll/virtual-scroll"
+  }
+}

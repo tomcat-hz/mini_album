@@ -1,0 +1,48 @@
+<!--pages/storys/storys.wxml-->
+<scroll-container
+  isEmpty="{{total === 0}}"
+  bind:scroll="handleScroll" 
+  loading="{{pageLoading}}"
+  bind:refresh="initData">
+  <custom-navbar slot="header" sticky showBack showSetting="{{albumSetting.albumType === AlbumType.NORMAL}}" title="{{albumName}}" bind:setting="setting"/>
+  <empty-box url="document.png" slot="empty" wx:if="{{!pageLoading && total === 0}}" message="点击加号，记录您的第一条动态" bind:tapAdd="uploadImage"/>
+  <view wx:else slot="content">
+    <!-- <view 
+      wx:if="{{albumSetting.notice}}"
+      class="notice-box" 
+      bind:tap="showNoticeDialog">
+        <t-notice-bar
+          theme="success"
+          visible="{{showNotice}}"
+          prefixIcon="null"
+          marquee="{{marquee1}}"
+          content="{{albumSetting.notice}}"
+        />
+    </view> -->
+    <view class="story-box">
+      <view class="story-item" wx:for="{{storyList}}" wx:key="item" wx:for-index="storyIndex">
+        <story-content story="{{item}}" storyIndex="{{index}}" showCommentList bind:commentSuccess="commentSuccess" isComment="{{albumSetting.isComment === 'Y' || albumSetting.albumUserType !== AlbumUserType.MEMBER}}" tips="评论功能暂未开启，联系管理员开启"/>
+      </view>
+    </view>
+    <bottom-loading isLoading="{{isLoading}}" hasMore="{{total > storyList.length}}" safeAreaBottom="{{safeAreaBottom}}" bind:loadMore="loadMore"/>
+  </view>
+</scroll-container>
+
+<upload-button hideUploadBtn="{{hideUploadBtn}}" bind:tapUpload="createStory" wx:if="{{albumSetting.isUpload === 'Y'}}"/>
+
+<t-popup visible="{{showNoticeDialog}}" bind:visible-change="showNoticeDialog" placement="bottom">
+  <view class="notice-dialog">
+    <view class="header">
+      <view class="btn-close" bind:tap="showNoticeDialog">关闭</view>
+      <view class="title">标题文字</view>
+    </view>
+    <!-- <image class="notice-image" src="../../static/bg.png" mode="widthFix"/> -->
+    <view class="content">
+      阿里妈妈MUX倾力打造的矢量图标管理、交流平台。
+      设计师将图标上传到 iconfont 平台，用户可以自定义下载多种格式的icon，平台也可将图标转换为字体，便于前端工程师自由调整与调用。
+      ©ALIMAMA MUX, powered by alimama THX.
+      转载内容版权归作者及来源网站所有，本站原创内容转载请注明来源，商业媒体及纸媒请先联系：zy99945@alibaba-inc.com
+      服务协议隐私政策浙ICP备2022000356号-3浙公网安备 33011002011859号
+    </view>
+  </view>
+</t-popup>

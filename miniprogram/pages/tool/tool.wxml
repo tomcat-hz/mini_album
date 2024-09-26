@@ -1,0 +1,14 @@
+<!--pages/tool/tool.wxml-->
+<custom-navbar sticky showSearch  bind:search="search" />
+
+<scroll-view scroll-y="{{true}}" show-scrollbar="{{false}}" style="height: calc(100vh - {{tabbarHeight}}rpx - {{toolTop}}rpx - {{toolHeight}}rpx);">
+  <view wx:for="{{tools}}" wx:for-item="tool" wx:key="tool">
+    <view class="tool-title">
+      {{tool.title}}
+    </view>
+    <t-grid style="background-color: var(--bg-color-2);" column="{{4}}" theme="card">
+      <t-grid-item wx:for="{{tool.items}}" wx:key="item" text="{{item.name}}" image="{{item.icon}}" badge-props="{{item.badge}}" bind:tap="clickTool" data-tool="{{item}}"/>
+    </t-grid>
+  </view>
+  <view style="height: 32rpx;"></view>
+</scroll-view>

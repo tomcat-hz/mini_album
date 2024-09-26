@@ -1,0 +1,7 @@
+<!--pages/share/share.wxml-->
+<view wx:if="{{joinSuccess}}">
+  加入成功
+</view>
+<view wx:else>
+  加入失败
+</view>

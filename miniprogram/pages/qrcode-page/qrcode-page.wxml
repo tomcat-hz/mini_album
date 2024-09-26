@@ -1,0 +1,3 @@
+<!--pages/qrcode-page/qrcode-page.wxml-->
+<custom-navbar stick showBack/>
+<qrcode-builder qrcode="{{qrcode}}"/>

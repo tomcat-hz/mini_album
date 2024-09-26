@@ -1,0 +1,35 @@
+/**app.less**/
+@import './style/main.less';
+@import './style/theme.less';
+@import './style/iconfont.less';
+@import './style/animate.less';
+
+page {
+  width: 100%;
+  background-color: var(--bg-color-1);
+  font-size: var(--font-size-base);
+  line-height: var(line-height-base);
+  font-family: var(--font-family-sans);
+  overflow: hidden;
+  word-wrap: break-word; /* 允许在单词内换行 */  
+  word-break: break-all; /* 强制换行 */  
+}
+
+.safe-container{
+  box-sizing: border-box;
+  padding-bottom: env(safe-area-inset-bottom);
+  width: 100%;
+}
+
+.common-loading {
+  --td-loading-text-font-size: 32rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.shadow {
+  font-size: var(--font-size-base);
+  text-shadow: 1rpx -1rpx white, -1rpx 1rpx #999, -10rpx 10rpx 10rpx #80808080;
+}

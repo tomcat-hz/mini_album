@@ -1,0 +1,11 @@
+<!--components/album-list-item/album-list-item.wxml-->
+<view class="album-list-item">
+  <t-image class="img" src="/static/bg.jpg" mode="aspectFill"/>
+  <view class="content">
+    <view class="title">你好相册</view>
+    <view class="info">
+      <view>成员100</view>
+      <view>动态100</view>
+    </view>
+  </view>
+</view>

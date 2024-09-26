@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-image": "tdesign-miniprogram/image/image"
+  }
+}

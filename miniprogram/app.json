@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/album/album",
+    "pages/index/index",
+    "pages/tool/tool",
+    "pages/message/message",
+    "pages/my/my",
+    "pages/upload/upload",
+    "pages/group/group",
+    "pages/album-list/album-list",
+    "pages/storys/storys",
+    "pages/story-detail/story-detail",
+    "pages/comment-detail/comment-detail",
+    "pages/settings/settings",
+    "pages/like/like",
+    "pages/reback/reback",
+    "pages/history/history",
+    "pages/myCard/myCard",
+    "pages/myJob/myJob",
+    "pages/notice/notice",
+    "pages/search/search",
+    "pages/vip/vip",
+    "pages/share/share",
+    "pages/member/member",
+    "pages/image-form/image-form",
+    "pages/input-page/input-page",
+    "pages/qrcode-page/qrcode-page",
+    "pages/admin-form/admin-form",
+    "pages/option-page/option-page",
+    "pages/user-select/user-select",
+    "pages/user-center/user-center"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "onReachBottomDistance": 150,
+    "enablePullDownRefresh": false,
+    "navigationBarTextStyle": "black"
+  },
+  "renderer": "webview",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "照片"
+      },
+      {
+        "pagePath": "pages/album/album",
+        "text": "相册"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "scroll-container": "components/scroll-container/scroll-container",
+    "custom-navbar": "components/custom-navbar/custom-navbar",
+    "tip": "components/tip/tip",
+    "t-loading": "tdesign-miniprogram/loading/loading",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh"
+  }
+}

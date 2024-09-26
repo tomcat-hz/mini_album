@@ -1,0 +1,3 @@
+<!--pages/input-page/input-page.wxml-->
+<custom-navbar stick showBack/>
+<input-builder input="{{input}}" bind:submit="submit"/>

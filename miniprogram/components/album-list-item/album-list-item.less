@@ -1,0 +1,37 @@
+/* components/album-list-item/album-list-item.wxss */
+.album-list-item {
+  position: relative;
+  display: flex;
+  margin: 32rpx;
+  width: calc(100vw - 64rpx);
+  height: 400rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  .img {
+    width: inherit;
+    height: inherit;
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    padding: 32rpx;
+    bottom: 0;
+    width: inherit;
+    height: 160rpx;
+    background-color: var(--color-5);
+    .title {
+      font-size: var(--font-size-middle); 
+      font-weight: var(--font-weight-bold);  
+      color: var(--color-base);
+    }
+    .info {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--font-size-base); 
+      color: var(--color-base);
+    }
+  }
+}

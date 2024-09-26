@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "common-header": "/components/common-header/common-header",
+    "empty-box": "../../components/empty-box/empty-box",
+    "comment": "../../components/comment/comment",
+    "content-view": "/components/content-view/content-view",
+    "comment-view": "/components/comment-view/comment-view"
+  }
+}

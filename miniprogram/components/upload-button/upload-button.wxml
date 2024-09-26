@@ -1,0 +1,4 @@
+<!--components/upload-button/upload-button.wxml-->
+<view animation="{{animationData}}" style="transition: all 0.3s ease;position: fixed;bottom: calc(30rpx + {{tabbarHeight}}rpx);right: 30rpx;">
+  <t-button theme="primary" size="large" icon="add" shape="circle" bind:tap="tapUpload"></t-button>
+</view>

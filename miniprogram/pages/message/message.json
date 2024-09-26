@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "common-dialog": "../../components/common-dialog/common-dialog",
+    "common-select": "../../components/common-select/common-select",
+    "t-badge": "tdesign-miniprogram/badge/badge"
+  }
+}

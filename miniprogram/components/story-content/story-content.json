@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-image": "tdesign-miniprogram/image/image",
+    "content-view": "/components/content-view/content-view",
+    "share": "/components/share/share",
+    "common-header": "/components/common-header/common-header",
+    "comment-view": "/components/comment-view/comment-view",
+    "comment": "/components/comment/comment"
+  }
+}

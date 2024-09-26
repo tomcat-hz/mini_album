@@ -1,0 +1,11 @@
+<!--components/common-header/common-header.wxml-->
+<view class="common-header">
+    <t-avatar image="{{headItem.avatar}}&imageMogr2/thumbnail/600x/interlace/1/quality/100" />
+    <view class="common-header-user">
+      <view class="nickname">
+        {{headItem.nickName}}
+        <t-tag wx:if="{{headItem.isLandlord === 'Y' && item.commentParentId !== 0}}" class="" theme="danger" size="small" shape="round">楼主</t-tag>
+      </view>
+      <view class="time-ago">{{headItem.timeAgo}}</view>
+    </view>
+</view>

@@ -1,0 +1,28 @@
+<!--components/local-upload/local-upload.wxml-->
+<view class="safe-container" wx:if="{{mode === 'card'}}">
+  <view class="local-upload" style="max-height: calc(100vh - {{toolHeight}}rpx - {{toolTop}}rpx - 100rpx);">
+    <block wx:if="{{url}}">
+      <t-image bind:tap="preview" class="local-upload-image" src="{{url}}" height="{{cardHeight}}" mode="aspectFit"/>
+    </block>
+    <view class="local-upload-box" bind:tap="localUpload" wx:else style="height: {{cardHeight}};">
+      <view class="local-upload-title">{{title}}</view>
+      <view class="local-upload-btn">点击上传</view>
+    </view>
+  </view>
+</view>
+<view class="safe-container" wx:if="{{mode === 'job'}}">
+  <view class="local-upload" style="max-height: calc(100vh - {{toolHeight}}rpx - {{toolTop}}rpx - 100rpx);">
+    <block wx:if="{{url}}">
+      <t-image bind:tap="preview" class="local-upload-image" src="{{url}}" mode="widthFix"/>
+    </block>
+    <view class="local-upload-box" bind:tap="localUpload" wx:else style="height: calc(100vh - {{toolHeight}}rpx - {{toolTop}}rpx - {{safeAreaBottom}}rpx - 100rpx - 64rpx - 4rpx);">
+      <view class="local-upload-title">{{title}}</view>
+      <view class="local-upload-btn">点击上传</view>
+    </view>
+  </view>
+</view>
+<t-divider dashed align="left">
+  <view slot="content" style="display: flex;">
+    本地保存，无泄漏风险，清除缓存即可<view style="color: var(--color-6);" bind:tap="removeKey">删除</view>
+  </view>
+</t-divider>

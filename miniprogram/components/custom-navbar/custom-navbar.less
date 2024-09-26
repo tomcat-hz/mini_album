@@ -1,0 +1,134 @@
+/* components/custom-navbar/custom-navbar.wxss */
+.container {
+  width: 100vw;
+  padding: 0 32rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  .btn-box {
+    position: relative;
+    display: flex;
+    gap: 32rpx;
+    .choose-btn {
+      position: absolute;
+      margin-left: -16rpx;
+      background-color: var(--bg-color-5);
+      color: var(--color-8);
+      text-align: center;
+      height: 60rpx;
+      line-height: 60rpx;
+      width: 120rpx;
+      border-radius: 30rpx;
+    }
+  }
+}
+
+.blur {
+  width: 100vw;
+  &:before {  
+    content: "";  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background: inherit; /* 继承容器的背景 */  
+    backdrop-filter: blur(5rpx); /* 应用模糊效果，数字可以根据需要调整 */  
+    z-index: -1; /* 将伪元素置于内容之下 */  
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  gap: 30rpx;
+}
+
+.user-info-text {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: var(--font-size-middle);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-base);
+}
+
+.sign {
+  display: inline-flex;
+  justify-content: space-between;
+  font-size: var(--font-size-min);
+  line-height: 35rpx;
+  color: rgba(0, 0, 0, 1);
+  .user-center {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.un-login {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .8);
+  .login-btn {
+    color: rgb(29, 50, 231);
+  }
+}
+
+.title-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  .back-icon {
+    display: flex;
+    height: inherit;
+    line-height: 32rpx;
+    align-items: center;
+    position: absolute;
+    left: 0;
+  }
+  .title {
+    display: flex;
+    gap: 8rpx;
+    flex: 1;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+}
+
+.user-form {
+  text-align: center;
+  position: relative;
+  .choose-avatar-btn {
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: transparent;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 1000;
+  }
+  .user-avatar {
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .dialog-input {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    margin-top: 32rpx;
+    border-radius: 8rpx;
+    background-color: #f3f3f3 !important;
+    box-sizing: border-box;
+  }
+}

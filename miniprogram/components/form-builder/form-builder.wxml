@@ -1,0 +1,17 @@
+<!--components/form-builder/form-builder.wxml-->
+<t-cell-group theme="card">
+  <t-cell wx:for="{{form}}" wx:key="item" title="{{item.title}}" arrow="{{item.arrow}}" data-index="{{index}}" note="{{item.note || ''}}" description="{{item.description || ''}}" bind:tap="tapFormItem">
+    <block wx:if="{{!arrow}}">
+      <view wx:if="{{item.icons}}" style="display: flex;" slot="right-icon">
+        <t-icon wx:for="{{item.icons}}" wx:key="icon" wx:for-item="icon" prefix="{{icon.prefix || ''}}" name="{{icon.name}}" size="{{icon.size}}" color="{{icon.color}}"/>
+      </view>
+      <view wx:elif="{{item.type === 'switch'}}" slot="note">
+        <t-switch catch:tap="tapSwitch" data-item="{{item.switch}}"  value="{{item.switch.value === 'Y'}}"/>
+      </view>
+      <view wx:elif="{{item.imageUrl}}" style="display: flex;align-items: center;" slot="right-icon">
+        <t-image width="64rpx" height="64rpx" src="{{item.imageUrl}}" mode="aspectFill"/>
+        <t-icon name="chevron-right" size="48rpx" color="rgba(0, 0, 0, 0.4)"/>
+      </view>
+    </block>
+  </t-cell>
+</t-cell-group>

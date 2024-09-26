@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "t-image": "tdesign-miniprogram/image/image"
+  }
+}

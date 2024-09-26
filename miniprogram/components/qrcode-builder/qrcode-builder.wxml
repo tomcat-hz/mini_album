@@ -1,0 +1,7 @@
+<!--components/qrcode-builder/qrcode-builder.wxml-->
+<view class="qrcode">
+  <t-image width="96rpx" height="96rpx" src="{{cover}}" mode="aspectFill"/>
+  <view class="title">相册：{{qrcode.title}}</view>
+  <t-image width="400rpx" height="400rpx" src="{{qrcode.url}}" mode="aspectFill"/>
+  <view class="desc">{{qrcode.desc}}</view>
+</view>

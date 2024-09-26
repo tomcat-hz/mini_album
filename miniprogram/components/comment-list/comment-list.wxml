@@ -1,0 +1,42 @@
+<!--components/comment-list/comment-list.wxml-->
+<view class="comment-list">
+  <view class="comment-list-item" wx:if="{{parentComment}}">
+    <view class="comment-list-item-box">
+      <common-header item="{{parentComment}}" />
+      <view class="comment-father">
+        <view>{{parentComment.content}}</view>
+        <view class="comment-icon">
+          <t-icon prefix="icon" name="{{parentComment.isLike === 'Y' ? 'follow-fill' : 'follow'}}" size="48rpx" data-index="{{index}}" data-comment="{{parentComment}}" catchtap="clickParentIcon" />
+          <text class="like-num">{{parentComment.likeCount}}</text>
+          <t-icon prefix="icon" name="weixinliaotian" size="48rpx" data-comment-type="parent" catchtap="changeShowComment" />
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+  </view>
+  <block wx:if="{{commentList.total}}">
+    <view wx:for="{{commentList.rows}}" wx:key="comment" wx:for-item="comment" wx:for-index="index" class="comment-list-item">
+      <view class="comment-list-item-box" data-index="{{index}}" data-comment-type="son" bind:tap="changeShowComment">
+        <common-header item="{{comment}}" />
+        <view class="comment-father">
+          <view>
+            <block wx:if="{{comment.replyUserId && (comment.replyUserId != comment.userId)}}">
+              回复<text class="ml-8 mr-8 nickname">{{comment.replyNickName}}</text>：
+            </block>
+            <content-view wx:if="{{comment.content}}" content="{{comment.content}}" tips="{{['展开', '收起']}}"/>
+          </view>
+          <view class="comment-icon">
+            <t-icon prefix="icon" name="{{comment.isLike === 'Y' ? 'follow-fill' : 'follow'}}" size="48rpx" data-index="{{index}}" data-comment="{{comment}}" catchtap="clickIcon" />
+            <text class="like-num">{{comment.likeCount}}</text>
+            <t-icon prefix="icon" name="weixinliaotian" size="48rpx"/>
+          </view>
+          <comment-view commentList="{{comment.commentList}}" data-comment-id="{{comment.commentId}}" data-story-id="{{comment.storyId}}" catch:tap="clickComment"/>
+        </view>
+      </view>
+      <t-divider/>
+    </view>
+  </block>
+  <empty-box url="chat-bubbles.png" wx:else slot="empty" message="快来第一个评论吧！"/>
+</view>
+
+<comment show="{{showComment}}" albumId="{{albumId}}" storyId="{{storyId}}" replyUserId="{{commentType === 'parent' ? parentComment.userId : commentList.rows[commentIndex].userId}}" commentParentId="{{commentParentId || commentList.rows[commentIndex].commentId}}" bind:commentSuccess="commentSuccess" bind:closeComment="changeShowComment"/>

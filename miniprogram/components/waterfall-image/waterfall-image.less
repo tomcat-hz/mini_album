@@ -1,0 +1,34 @@
+/* components/waterfall-image.wxss */
+.image-box {
+  display: flex;
+  align-items: flex-start;
+  .cloumn {
+    width: 50%;
+    .cloumn-item {  
+      position: relative;
+      width: 360rpx;
+      margin: 0rpx auto 20rpx; /* 水平居中，并设置上下外边距 */  
+      background-color: #fff; /* 白色背景，与浅灰色背景形成对比 */  
+      border-radius: 10rpx; /* 圆角，使图片框看起来更柔和 */  
+      overflow: hidden; /* 确保图片不会溢出容器 */  
+      transition: box-shadow 0.3s ease; /* 添加过渡效果，使阴影变化更平滑 */  
+      .choosed-image {
+        z-index: 99;
+        position: absolute;
+        border-radius: 50%;
+        bottom: 10rpx;
+        right: 10rpx;
+        background-color: white;
+      }
+      .overlay { 
+        z-index: 98;
+        position: absolute;  
+        top: 0;  
+        left: 0;  
+        width: 100%;  
+        height: 100%;  
+        background-color: var(--color-3);
+      }
+    }  
+  }
+}
